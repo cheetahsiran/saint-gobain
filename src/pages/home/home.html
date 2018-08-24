@@ -1,14 +1,34 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      <img src="../../assets/imgs/saint-gobain-logo.png" width="68px" height="auto">
     </ion-title>
+    <ion-buttons right>
+      <img src="../../assets/icon/project.png" width="16px" height="auto">
+    </ion-buttons>
+    <ion-buttons right>
+      <img src="../../assets/icon/gallery.png" width="16px" height="auto">
+    </ion-buttons>
+    <ion-buttons right>
+      <img src="../../assets/icon/logout.png" width="16px" height="auto">
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<div class="container-login100" style="background-image: url('../assets/imgs/bg-01.jpg');">
+  <div class="row" >
+    <div class="product-list-show" [ngClass]="!openMenu?'product-list-show':'product-list-show-menu'">
+      <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 project-list-pad">
+        <img src="../../assets/icon/project-list.png" width="34px" height="auto">
+        <span class="project-list-title">Select Building type</span>
+      </div>
+      <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 p-t-25">
+
+      </div>
+    </div>
+    <div class="check-div cursor-pnt" [ngClass]="!openMenu?'left-0':'left-98'" (click)="productToggle()">
+    </div>
+  </div>
+
+  <img src="../../assets/icon/project-expand.png" class="expand-icon" (click)="productToggle()">
+</div>

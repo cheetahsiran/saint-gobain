@@ -6,9 +6,15 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  openMenu:boolean = false;
+  productList:any = [];
   constructor(public navCtrl: NavController) {
+    }
+  this.productList = [{
 
+  }];
+  productToggle() {
+    console.log();
+    this.openMenu = !this.openMenu;
   }
-
 }
