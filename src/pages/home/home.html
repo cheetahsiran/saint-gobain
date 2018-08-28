@@ -15,20 +15,32 @@
   </ion-navbar>
 </ion-header>
 
-<div class="container-login100" style="background-image: url('../assets/imgs/bg-01.jpg');">
-  <div class="row" >
-    <div class="product-list-show" [ngClass]="!openMenu?'product-list-show':'product-list-show-menu'">
-      <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 project-list-pad">
-        <img src="../../assets/icon/project-list.png" width="34px" height="auto">
-        <span class="project-list-title">Select Building type</span>
-      </div>
-      <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 p-t-25">
+<div class="container-login100">
+  <img src="../assets/imgs/bg-01.jpg">
+  <img src="../../assets/icon/project-expand.png" class="expand-icon" (click)="productToggle()">
 
-      </div>
+</div>
+<div class="row">
+  <div class="product-list-show" [ngClass]="!openMenu?'product-list-show':'product-list-show-menu'">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 project-list-pad">
+      <img src="../../assets/icon/project-list.png" width="34px" height="auto">
+      <span class="project-list-title">Select Building type</span>
     </div>
-    <div class="check-div cursor-pnt" [ngClass]="!openMenu?'left-0':'left-98'" (click)="productToggle()">
+    <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 pad-25 m-b-15">
+      <div class="row">
+        <div class="col-md-3 col-lg-3 col-xs-12 col-sm-6 p-b-20" *ngFor="let productObj of productList">
+          <div class="thumbnail">
+            <img src="https://www.pixelstalk.net/wp-content/uploads/2016/10/Building-Wallpapers-HD.jpg" width="100%">
+            <div class="caption">
+              <p>{{productObj.name}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <img src="../../assets/icon/project-expand.png" class="expand-icon" (click)="productToggle()">
+  <div class="check-div cursor-pnt display-flex" [ngClass]="!openMenu?'left-0':'left-98'" (click)="productToggle()">
+    <img src="../../assets/icon/right.png" width="34px" height="auto" class="margin-auto">
+  </div>
 </div>
